@@ -1,0 +1,187 @@
+/* ==========================
+   Global Reset
+========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+    background: #fafafa;
+    color: #27272a;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================
+   Main Container
+========================== */
+.container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 90px 24px;
+}
+
+/* ==========================
+   Main Heading
+========================== */
+.container h1 {
+    text-align: center;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 600;
+    letter-spacing: -1.5px;
+    color: #18181b;
+    margin-bottom: 60px;
+}
+
+/* ==========================
+   Card Grid
+========================== */
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.card:first-child {
+    grid-column: 1 / -1;
+}
+
+/* ==========================
+   Individual Card
+========================== */
+.card {
+    background: #ffffff;
+    padding: 42px 30px;
+    border: 1px solid #eeeeef;
+    border-radius: 12px;
+    text-align: center;
+    /* Outline */
+    border: 3px solid #1f2937;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.025);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+/* Subtle Hover Effect */
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #dcdce0;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.055);
+}
+
+/* ==========================
+   Card Icon
+========================== */
+.card-icon {
+    font-size: 38px;
+    margin-bottom: 22px;
+    opacity: 0.85;
+}
+
+/* ==========================
+   Card Title
+========================== */
+.card h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.4px;
+    color: #27272a;
+    margin-bottom: 12px;
+}
+
+/* ==========================
+   Card Description
+========================== */
+.card p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #71717a;
+    margin-bottom: 26px;
+}
+
+/* ==========================
+   Learn More Link
+========================== */
+.card a {
+    display: inline-block;
+    text-decoration: none;
+    color: #27272a;
+    background: #f4f4f5;
+
+    padding: 10px 24px;
+    border-radius: 6px;
+
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+/* Link Hover */
+.card a:hover {
+    background: #27272a;
+    color: #ffffff;
+}
+
+/* ==========================
+   Tablet Responsive
+========================== */
+@media (max-width: 900px) {
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+
+    .card:first-child {
+        grid-column: 1 / -1;
+    }
+
+    .container {
+        padding: 70px 24px;
+    }
+}
+
+/* ==========================
+   Mobile Responsive
+========================== */
+@media (max-width: 600px) {
+    .container {
+        padding: 50px 18px;
+    }
+
+    .container h1 {
+        margin-bottom: 35px;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .card {
+        padding: 35px 24px;
+    }
+}
+
+/* ==========================
+   Reduced Motion
+========================== */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
